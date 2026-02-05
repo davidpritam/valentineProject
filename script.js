@@ -3,15 +3,20 @@ const nobtn = document.getElementById("btn2")
 const yesBtn = document.getElementById("btn1")
 const popup = document.getElementById("popup")
 const closedBtn = document.getElementById("closeBtn")
+const sound = document.getElementById("loveSound");
 
 // Show GIF popup when Yes button clicked
 yesBtn.addEventListener("click", () => {
-  popup.style.display = "flex";  // flex centers the GIF
+  popup.style.display = "flex";
+  sound.currentTime = 0;
+  sound.play();  // flex centers the GIF
 });
 
 // Close popup
 closeBtn.addEventListener("click", () => {
   popup.style.display = "none";
+  sound.pause();                  // stop audio
+  sound.currentTime = 0;
 });
 
 
